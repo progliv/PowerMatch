@@ -7,8 +7,8 @@ rm -rf powermatch-venv || true
 
 echo "Pulling newest target_new branch from github"
 cd ~/Documents
-git clone -b target_new --single-branch https://github.com/IskSweden/PowerMatch.git
-echo "cloned target_new branch"
+git clone https://github.com/progliv/PowerMatch.git
+echo "cloned branch from progliv"
 
 cd ~/Documents/PowerMatch
 python3 -m venv powermatch-venv
