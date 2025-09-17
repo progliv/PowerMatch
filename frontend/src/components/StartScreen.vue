@@ -1,8 +1,11 @@
 <template>
   <div class="wrapper" @keydown="handleKey">
+     <div class="logo-row">
+        <img :src="logoLeft" alt="Logo links" class="logo"/>
+      </div>
+
     <div class="card">
       <h1>⚡ PowerMatch</h1>
-
       <div class="form">
         <label>
           Name:
@@ -36,7 +39,7 @@
         >
           Start Game
         </button>
-      </div>
+
 
       <div class="leaderboard" v-if="highscores">
         <h2>All-Time Top 5</h2>
@@ -56,17 +59,24 @@
           </li>
         </ul>
       </div>
+            </div>
+
     </div>
+               <div class="logo-row">
+        <img :src="logoRight" alt="Logo rechts" class="logo"/>
+      </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import logoLeft from '../assets/livina_logo.svg'
+import logoRight from '../assets/eniwa_logo.png'
 
 const router = useRouter()
 const name = ref('')
-const difficulty = ref('Medium')
+const difficulty = ref('Easy')
 const highscores = ref(null)
 
 const nameInput = ref(null)
@@ -138,7 +148,7 @@ onMounted(() => {
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  max-width: 480px;
+  max-width: 30%;
   width: 100%;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -216,4 +226,25 @@ button:hover:enabled {
 .score {
   font-weight: bold;
 }
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  height: 20rem;
+  width: 50%;
+  object-fit: contain;
+  padding: 2%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+@media (max-width: 420px) {
+  .logo { height: 36px; }
+}
+
 </style>
