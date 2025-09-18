@@ -1,5 +1,8 @@
 <template>
   <div class="wrapper" @keydown.enter="playAgain" tabindex="0">
+    <div class="logo-row">
+      <img :src="logoLeft" alt="Logo links" class="logo"/>
+    </div>
     <div class="card">
       <h1>Game Over</h1>
 
@@ -24,12 +27,17 @@
         </ul>
       </div>
     </div>
+        <div class="logo-row">
+      <img :src="logoRight" alt="Logo rechts" class="logo"/>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import logoLeft from '../assets/livina_logo.svg'
+import logoRight from '../assets/eniwa_logo.png'
 
 const route = useRoute()
 const router = useRouter()
@@ -175,4 +183,24 @@ button:hover {
 .score {
   font-weight: bold;
 }
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  height: 20rem;
+  width: 50%;
+  object-fit: contain;
+  padding: 2%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+@media (max-width: 420px) {
+  .logo { height: 36px; }
+}
+
 </style>

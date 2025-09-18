@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper" @keydown="handleKey">
-     <div class="logo-row">
-        <img :src="logoLeft" alt="Logo links" class="logo"/>
-      </div>
+    <div class="logo-row">
+      <img :src="logoLeft" alt="Logo links" class="logo"/>
+    </div>
 
     <div class="card">
       <h1>⚡ PowerMatch</h1>
@@ -39,7 +39,7 @@
         >
           Start Game
         </button>
-
+      </div>
 
       <div class="leaderboard" v-if="highscores">
         <h2>All-Time Top 5</h2>
@@ -59,12 +59,12 @@
           </li>
         </ul>
       </div>
-            </div>
-
     </div>
-               <div class="logo-row">
-        <img :src="logoRight" alt="Logo rechts" class="logo"/>
-      </div>
+
+  
+    <div class="logo-row">
+      <img :src="logoRight" alt="Logo rechts" class="logo"/>
+    </div>
   </div>
 </template>
 
